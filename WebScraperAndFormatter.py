@@ -121,7 +121,7 @@ def csv_generate(all_events, url):
     #     os.makedirs(dirname)
 
 
-    with open(filename, 'w') as csv_file:
+    with open(os.path.join('event_csv', filename), 'w') as csv_file:
 
 
         csv_writer = csv.writer(csv_file)
