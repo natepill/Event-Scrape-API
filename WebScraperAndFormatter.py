@@ -111,14 +111,18 @@ def csv_generate(all_events, url):
     url = url.replace('/', '-') #Prevents the file name being interpreted as having multiple directories due to "/"'s in the URL
     filename_pattern = re.compile('www.*')
 
-    filename = '{}.csv'.format(str(url))
-    dirname = os.path.dirname(filename)
-    if not os.path.exists(dirname):
-        os.makedirs(dirname)
+    url = re.search(filename_pattern, url).group(0)
+    print('This is url:', url)
 
-    csv_array = list()
+    filename = '{}.csv'.format(str(url))
+
+    # dirname = os.path.dirname(filename)
+    # if not os.path.exists(dirname):
+    #     os.makedirs(dirname)
+
 
     with open(filename, 'w') as csv_file:
+
 
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow(['title', 'location', 'date', 'time', 'price'])
@@ -147,7 +151,7 @@ def csv_generate(all_events, url):
 
 
 
-
+    csv_array = list()
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
