@@ -167,10 +167,13 @@ def json_generate(csv_filename, url):
 
     fieldnames = ('title', 'location', 'date', 'time', 'price')
     entries = []
-    with open(csv_filename, 'r') as csvfile:
+
+
+
+    with open(os.path.join('event_csv', csv_filename), 'r') as csv_file:
         #python's standard dict is not guaranteeing any order,
         #but if you write into an OrderedDict, order of write operations will be kept in output.
-        reader = csv.DictReader(csvfile, fieldnames)
+        reader = csv.DictReader(csv_file, fieldnames)
         for row in reader:
             entry = OrderedDict()
             for field in fieldnames:
@@ -181,7 +184,8 @@ def json_generate(csv_filename, url):
         "Events": entries
     }
 
-    with open( '{}.json'.format(url), 'w') as jsonfile:
+
+    with open(os.path.join('event_json', '{}.json'.format(url)), 'w') as jsonfile:
         json.dump(output, jsonfile)
         jsonfile.write('\n')
 
