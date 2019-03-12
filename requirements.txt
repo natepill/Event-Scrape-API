@@ -58,7 +58,7 @@ pyasn1-modules==0.2.3
 pycodestyle==2.3.1
 pycparser==2.19
 PyDictionary==1.5.2
-PyDispatcher==2.0.5
+PyDispatcher
 pydocstyle==2.1.1
 pyflakes==1.6.0
 Pygments==2.3.1
@@ -78,7 +78,7 @@ scipy==1.2.1
 Scrapy==1.5.1
 selenium==3.141.0
 service-identity==18.1.0
-singledispatch==3.4.0.3
+singledispatch
 six==1.11.0
 snowballstemmer==1.2.1
 SQLAlchemy==1.2.18
@@ -93,3 +93,4 @@ w3lib==1.19.0
 wcwidth==0.1.7
 Werkzeug==0.14.1
 zope.interface==4.6.0
+distribute
