@@ -5,7 +5,7 @@ import re
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
     url = 'https://www.eventbrite.com/d/ca--san-francisco/business--events/'
     events = scrape_and_format(url) #zipped object of events
@@ -30,4 +30,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=33507)
+    app.run(debug=True)
