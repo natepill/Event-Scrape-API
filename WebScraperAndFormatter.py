@@ -38,7 +38,7 @@ def scrape_and_format(url):
     for event in list_of_events:
 
         try:
-            event_titles.append(event.find('div', class_='card-text--truncated__three').text)
+            event_titles.append(event.find('div', class_='event-card__formatted-name--is-clamped').text)
         except:
             event_titles.append(None)
 
