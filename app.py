@@ -16,8 +16,8 @@ def index():
     url = re.search(filename_pattern, url).group(0)
 
     csv_filename = '{}.csv'.format(url)
-    json = json_generate(csv_filename, url)
-    return 'SUCCESSFUL DEPLOYMENT -- JSON AND CSV FILES HAVE BEEN CREATED'
+    csv_to_json = json_generate(csv_filename, url)
+    return jsonify(csv_to_json)
 
 # @app.route('/csv', methods=['GET'])
 # def index():
