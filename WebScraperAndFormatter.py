@@ -10,8 +10,8 @@ def construct_url(form_parameters):
     '''Need node app to structure request to be sent as an array of parameters'''
     '''Takes in array of parameters and constructs requested url'''
 
-    ## TODO: Array needs to be a set size, or every field must be required or if no answer is given then a null value must be appended to the array
-
+    # TODO: Array needs to be a set size, or every field must be required or if no answer is given then a null value must be appended to the array
+    # TODO: Pass in form parameters to app.py from input form from web app.
     url = 'https://www.eventbrite.com/d/{}/{}--{}--{}/{}'.format(form_parameters[0], form_parameters[1],form_parameters[2],form_parameters[3],form_parameters[4],form_parameters[5])
     # https://www.eventbrite.com/d/{location}/{category}--{event-type}--{date}/{page-number}
     return url

@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    url = 'https://www.eventbrite.com/d/ca--san-francisco/business--events/'
+    url = 'https://www.eventbrite.com/d/ca--san-francisco/business--events/' #NOTE: Will replace with constructed url
     events = scrape_and_format(url) #zipped object of events
     csv = csv_generate(events, url)
 
