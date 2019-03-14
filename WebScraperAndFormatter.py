@@ -10,24 +10,31 @@ import os
 def construct_url(form_parameters, page_number):
     '''Need node app to structure request to be sent as an array of parameters'''
     '''Takes in array of parameters and constructs requested url'''
+    # NOTE:form_parameters = list(location, category, event_type, time_frame)
     # NOTE: IF we allow tags in the form, then we are going to have to add a conditional in this function that checks to see if they were passed through. If they were, then there is a different process to construct the url
 
-    # TODO: Array needs to be a set size, or every field must be required or if no answer is given then a null value must be appended to the array
-    # TODO: Pass in form parameters to app.py from input form from web app.
-    url = 'https://www.eventbrite.com/d/{}/{}--{}--{}/{}'.format(form_parameters[0], form_parameters[1],form_parameters[2],form_parameters[3],form_parameters[4],form_parameters[5])
-    # TODO Strech Challenge: Accomodate Event tags in constructed url
+    # TODO: Every field must be required or if no answer is given then a null value must be appended to the array
+    url = 'https://www.eventbrite.com/d/{}/{}--{}--{}/{}'.format(form_parameters[0], form_parameters[1],form_parameters[2],form_parameters[3], page_number)
     # https://www.eventbrite.com/d/{location}/{category}--{event-type}--{date}/{page-number}
+    # TODO Strech Challenge: Accomodate Event tags in constructed url
+
     return url
 
 def generate_urls(form_parameters, num_of_pages):
     '''Generate a list of urls to scrape based on the number of pages to paginate through'''
+
+
     list_of_urls = list()
     for page_number in range(num_of_pages):
         list_of_urls.append(construct_url(form_parameters, page_number))
 
     return list_of_urls
 
+
 def scrape_and_format(url):
+    # TODO: Instead of one url, it needs to take in a list of urls
+
+    # TODO needs to return a list of zipped objects containing all scraped and formatted event details
     """Returns a zip object containing all scraped and formatted event details"""
 
     source = requests.get(str(url)).text #grabs text (html) from response object
