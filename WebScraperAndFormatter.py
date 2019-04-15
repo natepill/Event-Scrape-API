@@ -38,6 +38,35 @@ def clean_url(url):
     url = re.search(filename_pattern, url).group(0)
     return url
 
+
+
+'''
+SPD 1.4 Class Pseudocode for function refactoring:
+Create a list of web scrapped pages
+
+For every url in a list of urls
+
+	initialize BeautialSoup object with url information
+	Find the html tags with all the data that we want to scrape
+
+	initialize lists to organize scraped data into categories
+
+	Allocate the scraped data to the appropriate categories
+
+	Set up pattern recognitions to only grab the information that we need
+
+
+	Use these pattern recognitions to clean the data that we scraped to grab what we need and replace the values in our categories with these cleaned values.
+
+	return cleaned data back
+
+
+'''
+
+
+
+
+
 def scrape_and_format(urls):
     # TODO: Instead of one url, it needs to take in a list of urls
 
