@@ -60,6 +60,32 @@ For every url in a list of urls
 
 	return cleaned data back
 
+'''
+
+
+'''
+    SPD1.4 Class 2 refactor Notes:
+
+    I realized that the API returns data in a nested JSON array, with each page being a key with that page's
+    scraped results. That is not what we need though from the JSON perspective, we just need a data attribute
+    with ALL the data formatted in the object. Page numbers are an arbitary concept when it comes to building a dataset.
+
+-----------------------------------------------------------------------------------------------------------------
+
+    Test Cases:
+
+    Ensure each spot in a CSV or json objects has a valid value, if it doesn't it should insert values signifying a value
+    could not have been scraped.
+
+    Not sure if the csv files are being generated correctly because each file is the same size. How to write test cases for
+    checking the values in created files.
+
+-----------------------------------------------------------------------------------------------------------------
+
+    Possible Helper Functions:
+
+    Identifies event_titles, dates, locations, prices, in the list_of_events
+
 
 '''
 
